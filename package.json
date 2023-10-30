@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@vikadata/vika": "^1.1.5",
+    "ahooks": "^3.7.8",
+    "dayjs": "^1.11.8",
+    "lodash": "^4.17.21",
+    "react-router": "^6.14.0",
+    "react-router-dom": "^6.14.0"
+  }
+}

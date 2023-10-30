@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-hans">
+<head>
+	<!-- Google tag (gtag.js) -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>转换 力矩, 克力厘米</title>
+	<link rel="stylesheet" type="text/css" href="./static/css/cw-4-1-5.css">
+	</style>
+</head>
+<body>
+
+<script type="text/javascript">
+<!--
+var nT = ',';
+var nD = '.';
+-->
+</script>
+
+<div class="container">
+	<div class="row" id="content-container">
+		<div id="content-col" class="col-sm-9 col-lg-8">
+	
+<h1>克力厘米, 力矩</h1>
+
+<form id="conv_torque_ext" class="extended-form" action="/zh-hans/torque/gram-force-centimetre.html" onsubmit="execute_torque_ext(true); return false;" method="post">
+
+<p style="margin-top: 10px">
+在文本框中键入要转换的<strong>克力厘米</strong>数，以查看表中的结果。</p>
+
+<p style="clear:both">
+<input type="text" value="1" name="amount" aria-label="数量" class="form-control extended-amount" style="text-align: right;" />
+
+<select name="unit_from" aria-label="由" id="from_torque" class="form-control extended-from">
+<option value="1000000||µN·m">微牛米 (µN·m)</option>
+<option value="1000||millinewton metre">毫牛米</option>
+<option value="1||Nm">牛米 (Nm)</option>
+<option value="0.001||kN·m">千牛米 (kN·m)</option>
+<option value="0.000001||MN·m">兆牛米 (MN·m)</option>
+<option value="0.73756214927726536387808206497105||pound-force foot">磅力英尺</option>
+<option value="8.85075||lbf·in">磅力英寸 (lbf·in)</option>
+<option value="11.8009705||ozf·ft">盎司力英尺 (ozf·ft)</option>
+<option value="141.611646||ozf·in">盎司力英寸 (ozf·in)</option>
+<option value="0.1019716210||kgf·m">千克力米 (kgf·m)</option>
+<option value="0.1019716210||kp·m">千磅米 (kp·m)</option>
+<option value="10197.2||gf·cm" selected="selected">克力厘米 (gf·cm)</option>
+<option value="0.10197162129779||metre kg-force">米千克力</option>
+<option value="0.73756214927726536387808206497105||ft·lb">英尺磅-力 (ft·lb)</option>
+<option value="10.197162129779||centimetre kg-force">厘米千克-力</option>
+<option value="141.61192893574||inch ounce-force">英寸盎司-力</option>
+<option value="10000000||dyn cm">达因厘米 (dyn cm)</option>
+</select>
+
+<a href="#" onclick="converterChange('torque_ext', false);return false;">
+<img class="change" src="/static/images/trans.png" alt="调转转换" title="调转转换" width="16" height="21" />
+</a>
+
+<select name="unit_to" aria-label="成为" id="to_torque" class="form-control extended-to">
+<option value="1000000||µN·m">微牛米 (µN·m)</option>
+<option value="1000||millinewton metre">毫牛米</option>
+<option value="1||Nm">牛米 (Nm)</option>
+<option value="0.001||kN·m">千牛米 (kN·m)</option>
+<option value="0.000001||MN·m">兆牛米 (MN·m)</option>
+<option value="0.73756214927726536387808206497105||pound-force foot">磅力英尺</option>
+<option value="8.85075||lbf·in">磅力英寸 (lbf·in)</option>
+<option value="11.8009705||ozf·ft">盎司力英尺 (ozf·ft)</option>
+<option value="141.611646||ozf·in">盎司力英寸 (ozf·in)</option>
+<option value="0.1019716210||kgf·m">千克力米 (kgf·m)</option>
+<option value="0.1019716210||kp·m">千磅米 (kp·m)</option>
+<option value="10197.2||gf·cm">克力厘米 (gf·cm)</option>
+<option value="0.10197162129779||metre kg-force">米千克力</option>
+<option value="0.73756214927726536387808206497105||ft·lb" selected="selected">英尺磅-力 (ft·lb)</option>
+<option value="10.197162129779||centimetre kg-force">厘米千克-力</option>
+<option value="141.61192893574||inch ounce-force">英寸盎司-力</option>
+<option value="10000000||dyn cm">达因厘米 (dyn cm)</option>
+</select>
+
+
+
+
+<select name="decimals" aria-label="小数" class="form-control extended-decimals">
+<option value="0">0 小数</option>
+<option value="1">1 小数</option>
+<option value="2" selected="selected">2 小数</option>
+<option value="3">3 小数</option>
+<option value="4">4 小数</option>
+<option value="5">5 小数</option>
+<option value="6">6 小数</option>
+<option value="7">7 小数</option>
+<option value="8">8 小数</option>
+<option value="9">9 小数</option>
+<option value="10">10 小数</option>
+</select>
+<a href="#" onclick="execute_torque_ext(true);return false;">
+<img class="ok" src="/static/images/trans.png" alt="转换" title="转换" width="36" height="36" />
+</a>
+</p>
+</form>
+
+<div class="extended_result_container result_container">
+<div id="result-from">From</div>
+<div id="result-equals">等于</div>
+<div id="result-to">To</div>
+</div>
+<div id="unit-groups"><div class="unit-group-container"><ul><li class="odd"><p class="unit-literal"><a href="/zh-hans/torque/micronewton-metre.html">微牛米 (µN·m)</a></p> <p id="value_1" class="unit_number">-</p>
+<input type="hidden" name="unit" value="1000000||1" />
+<div style="clear: both"></div></li><li class="even"><p class="unit-literal"><a href="/zh-hans/torque/millinewton-metre.html">毫牛米</a></p> <p id="value_2" class="unit_number">-</p>
+<input type="hidden" name="unit" value="1000||2" />
+<div style="clear: both"></div></li><li class="odd"><p class="unit-literal"><a href="/zh-hans/torque/newton-metre.html">牛米 (Nm)</a></p> <p id="value_3" class="unit_number">-</p>
+<input type="hidden" name="unit" value="1||3" />
+<div style="clear: both"></div></li><li class="even"><p class="unit-literal"><a href="/zh-hans/torque/kilonewton-metre.html">千牛米 (kN·m)</a></p> <p id="value_4" class="unit_number">-</p>
+<input type="hidden" name="unit" value="0.001||4" />
+<div style="clear: both"></div></li><li class="odd"><p class="unit-literal"><a href="/zh-hans/torque/meganewton-metre.html">兆牛米 (MN·m)</a></p> <p id="value_5" class="unit_number">-</p>
+<input type="hidden" name="unit" value="0.000001||5" />
+<div style="clear: both"></div></li><li class="even"><p class="unit-literal"><a href="/zh-hans/torque/pound-force-foot.html">磅力英尺</a></p> <p id="value_6" class="unit_number">-</p>
+<input type="hidden" name="unit" value="0.73756214927726536387808206497105||6" />
+<div style="clear: both"></div></li><li class="odd"><p class="unit-literal"><a href="/zh-hans/torque/pound-force-inch.html">磅力英寸 (lbf·in)</a></p> <p id="value_7" class="unit_number">-</p>
+<input type="hidden" name="unit" value="8.85075||7" />
+<div style="clear: both"></div></li><li class="even"><p class="unit-literal"><a href="/zh-hans/torque/ounce-force-foot.html">盎司力英尺 (ozf·ft)</a></p> <p id="value_8" class="unit_number">-</p>
+<input type="hidden" name="unit" value="11.8009705||8" />
+<div style="clear: both"></div></li><li class="odd"><p class="unit-literal"><a href="/zh-hans/torque/ounce-force-inch.html">盎司力英寸 (ozf·in)</a></p> <p id="value_9" class="unit_number">-</p>
+<input type="hidden" name="unit" value="141.611646||9" />
+<div style="clear: both"></div></li><li class="even"><p class="unit-literal"><a href="/zh-hans/torque/kilogram-force-metre.html">千克力米 (kgf·m)</a></p> <p id="value_10" class="unit_number">-</p>
+<input type="hidden" name="unit" value="0.1019716210||10" />
+<div style="clear: both"></div></li><li class="odd"><p class="unit-literal"><a href="/zh-hans/torque/kilopond-metre.html">千磅米 (kp·m)</a></p> <p id="value_11" class="unit_number">-</p>
+<input type="hidden" name="unit" value="0.1019716210||11" />
+<div style="clear: both"></div></li><li class="even bold-unit"><p class="unit-literal"><a href="/zh-hans/torque/gram-force-centimetre.html">克力厘米 (gf·cm)</a></p> <p id="value_12" class="unit_number">-</p>
+<input type="hidden" name="unit" value="10197.2||12" />
+<div style="clear: both"></div></li><li class="odd"><p class="unit-literal"><a href="/zh-hans/torque/metre-kilogram-force.html">米千克力</a></p> <p id="value_13" class="unit_number">-</p>
+<input type="hidden" name="unit" value="0.10197162129779||13" />
+<div style="clear: both"></div></li><li class="even"><p class="unit-literal"><a href="/zh-hans/torque/foot-pound-force.html">英尺磅-力 (ft·lb)</a></p> <p id="value_14" class="unit_number">-</p>
+<input type="hidden" name="unit" value="0.73756214927726536387808206497105||14" />
+<div style="clear: both"></div></li><li class="odd"><p class="unit-literal"><a href="/zh-hans/torque/centimetre-kilogram-force.html">厘米千克-力</a></p> <p id="value_15" class="unit_number">-</p>
+<input type="hidden" name="unit" value="10.197162129779||15" />
+<div style="clear: both"></div></li><li class="even"><p class="unit-literal"><a href="/zh-hans/torque/inch-ounce-force.html">英寸盎司-力</a></p> <p id="value_16" class="unit_number">-</p>
+<input type="hidden" name="unit" value="141.61192893574||16" />
+<div style="clear: both"></div></li><li class="odd"><p class="unit-literal"><a href="/zh-hans/torque/dyne-centimetre.html">达因厘米 (dyn cm)</a></p> <p id="value_17" class="unit_number">-</p>
+<input type="hidden" name="unit" value="10000000||17" />
+<div style="clear: both"></div></li><li class="even"><p class="unit-literal">&nbsp;</p><div style="clear: both"></div></li></ul></div></div>
+
+
+<script type="text/javascript">
+<!--
+function execute_torque_ext(clicked) {
+	if (document.forms && document.forms['conv_torque_ext']) {
+		var from = document.forms['conv_torque_ext'].unit_from.value;
+		var elms = document.getElementsByName('unit');
+		var amount = document.forms['conv_torque_ext'].amount.value;
+		var decimals = document.forms['conv_torque_ext'].decimals.value;
+		var amount_int = amount - 0;
+        console.log('from',from)
+        console.log('elms',elms)
+        console.log('amount',amount)
+        console.log('decimals',decimals)
+        console.log('amount_int',amount_int)
+        console.log('-------------------------------------')
+
+		for (var i=0; i<elms.length; i++) {
+			convert(amount, from, elms[i].value, false, false, decimals);
+		}
+		convert(amount, from, $('#to_torque').val(), 'result-to', true, decimals);
+	
+		
+		$('#result-from').text(amount + ' ' + text2short($('#from_torque option:selected').text()));
+	
+	} else {
+		if (clicked) {
+			alert('Converter error. Conversion not supported by browser.');
+		}
+	}
+}
+
+-->
+</script>
+
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+var tRTX;
+
+
+
+
+
+function LZ(a) {
+    return (10 <= a || 0 > a ? "" : "0") + a
+}
+function Expo(a) {
+    return "e" + (0 > a ? "-" : "+") + LZ(Math.abs(a))
+}
+function Prfx(a, b, c) {
+    a += "";
+    if (0 < c.length)
+        for (; a.length < b; )
+            a = c + a;
+    return a
+}
+function StrU(a, b, c) {
+    var d, f = new String(Math.round(a * Number("1e" + c)));
+    if (/\D/.test(f))
+        return "" + a;
+    a = new String(Prfx(f, b + c, "0"));
+    return a.substring(0, d = a.length - c) + "." + a.substring(d)
+}
+function Sign(a) {
+    return 0 < a ? "" : 0 > a ? "-" : " "
+}
+function GetSEM(a) {
+    a = {
+        S: Sign(a),
+        E: 0,
+        M: void 0 == a ? void 0 : Math.abs(a)
+    };
+    if (0 == a.M || !isFinite(a.M))
+        return a;
+    for (; 10 <= a.M; )
+        a.E++,
+        a.M /= 10;
+    for (; 1 > a.M; )
+        a.E--,
+        a.M *= 10;
+    return a
+}
+function myRoundForced(a, b) {
+    if (0 == a)
+        return 0;
+    b = Math.round(b) + 1;
+    var c = GetSEM(a);
+    return (c.S + StrU(c.M, 1, b - 1) + (isFinite(c.M) ? Expo(c.E) : " ")).replace(".e", "e")
+}
+function myRound(a, b) {
+    if (0 == b)
+        a = Math.round(a);
+    else {
+        var c = Math.pow(10, b);
+        a = Math.round(a * c);
+        a /= c
+    }
+    return a
+}
+function replaceAll(a, b, c) {
+    if ("" != b && b != c)
+        for (var d = 0, f; d < a.length && (f = a.indexOf(b, d),
+        -1 != f); )
+            d = a.substr(0, f),
+            a = a.substr(f + b.length, a.length),
+            a = d + c + a,
+            d = d.length + c.length;
+    return a
+}
+function convertTable(a, b, c) {
+    a = a.split(",");
+    b = b.split(",");
+    var d = 0
+      , f = ""
+      , g = 0;
+    c = c.replace(",", ".");
+    for (var q = c == parseFloat(c), h = 0; h < a.length; h++)
+        if (c.toUpperCase() == a[h].toUpperCase()) {
+            g = h + 1;
+            f = "";
+            break
+        } else
+            q && a[h] == parseFloat(a[h]) && (0 == d ? (d = Math.abs(a[h] - c),
+            f = "~",
+            g = h + 1) : Math.abs(a[h] - c) <= d && (d = Math.abs(a[h] - c),
+            g = h + 1,
+            f = "~"));
+    return 0 < g ? f + b[g - 1] : "-"
+}
+function convertPaper(a, b, c, d) {
+    if ("0" == b)
+        return "-";
+    a = a.replace(",", ".");
+    b = b.replace(",", ".");
+    a = a.split("x");
+    var f = parseFloat(a[0]);
+    a = parseFloat(a[1]);
+    if ("P" == b) {
+        b = f * a;
+        a = c.split("x");
+        c = parseFloat(a[0]);
+        a = parseFloat(a[1]);
+        c = b = c * a / b;
+        b = myRound(b, d);
+        tmpStr = "" + b;
+        if (0 == b || 12 < tmpStr.length || 0 < tmpStr.indexOf("e"))
+            b = myRoundForced(c, d);
+        return "\u00d7" + b
+    }
+    c *= parseFloat(b);
+    b = f * c;
+    a *= c;
+    c = b;
+    b = myRound(b, d);
+    tmpStr = "" + b;
+    if (0 == b || 12 < tmpStr.length || 0 < tmpStr.indexOf("e"))
+        b = myRoundForced(c, d);
+    b = formatResult(b);
+    c = a;
+    a = myRound(a, d);
+    tmpStr = "" + a;
+    if (0 == a || 12 < tmpStr.length || 0 < tmpStr.indexOf("e"))
+        a = myRoundForced(c, d);
+    a = formatResult(a);
+    return b + " x " + a
+}
+function convertCurrency(a, b, c, d, f, g) {
+    b = b.split("|");
+    var q = b[0];
+    b = c.split("|");
+    var h = b[0];
+    c = b[1];
+    b = b[2];
+    a = a.replace(",", ".");
+    h = h.replace(",", ".");
+    q = q.replace(",", ".");
+    a = parseFloat(a);
+    h = parseFloat(h);
+    q = parseFloat(q);
+    q = a = a * h / q;
+    a = myRound(a, g);
+    tmpStr = "" + a;
+    if (0 == a || 12 < tmpStr.length || 0 < tmpStr.indexOf("e"))
+        a = myRoundForced(q, g);
+    f = isNaN(a) ? "-" : f ? formatResult(a) + " " + b : formatResult(a);
+    d ? (f = "<b>" + f + "</b>",
+    setInnerHTML("date", formatDate(c, 2))) : (d = replaceAll(b, " ", "-"),
+    d = replaceAll(d, "/", "-"),
+    d = "value_" + d,
+    document.getElementById("date" + d.substring(5, 9)).value = formatDate(c, 2));
+    setInnerHTML(d, f)
+}
+function convert(a, b, c, d, f, g) {
+    var q = !1
+      , h = b.split("|");
+    b = h[0];
+    var m = h[1]
+      , h = c.split("|")
+      , l = h[0]
+      , k = h[1];
+    c = h[2];
+    if ("T" == l)
+        f = convertTable(m, k, a);
+    else if ("P" == l)
+        f = convertPaper(k, b, m, g);
+    else {
+        a = a.replace(",", ".");
+        l = l.replace(",", ".");
+        b = b.replace(",", ".");
+        a = parseFloat(a);
+        var n = parseFloat(l)
+          , h = parseFloat(k)
+          , k = parseFloat(b)
+          , m = parseFloat(m);
+        if (-888 != h && -888 == m) {
+            h = b.split(":");
+            k = parseFloat(h[0]);
+            m = parseFloat(h[1]);
+            var r = Math.pow(10, a / k) / m * n
+        } else
+            -888 == h && -888 != m ? 0 == a ? (r = "\u221e",
+            q = !0) : 0 < a && (h = l.split(":"),
+            n = parseFloat(h[0]),
+            h = parseFloat(h[1]),
+            r = n * Math.log(h * a / k) * Math.LOG10E) : r = -999 == h && -999 == m ? n / k * a : -999 == h && -999 != m || -999 != h && -999 == m ? n * k / a : 0 == h && 0 == m || 10 != 10 + h + m - h - m ? n / k * a : (n - h) / (k - m) * a + (k * h - m * n) / (k - m);
+        if (q)
+            f = r;
+        else {
+            a = r;
+            r = myRound(r, g);
+            tmpStr = "" + r;
+            if (0 == r || 12 < tmpStr.length || 0 < tmpStr.indexOf("e"))
+                r = myRoundForced(a, g);
+            f = isNaN(r) ? "-" : f ? formatResult(r) + " " + remDupSho(c) : formatResult(r)
+        }
+    }
+    d ? f = "<b>" + f + "</b>" : (d = replaceAll(c, " ", "-"),
+    d = replaceAll(d, "/", "-"),
+    d = "value_" + d);
+    setInnerHTML(d, f)
+}
+function addSeparators(a) {
+    var b = [];
+    a += "";
+    var c = a.indexOf(".");
+    0 < c ? b = a.split(".", 2) : b[0] = a;
+    a = "";
+    for (var d = 0, f = b[0].length - 1; 0 <= f; f--)
+        0 < d && 0 == d % 3 && (a = nT + a),
+        a = b[0].charAt(f) + a,
+        d++;
+    0 < c && (a = a + nD + b[1]);
+    return a
+}
+function formatResult(a) {
+    var b = ["", ""];
+    a + 0 == a ? b[0] = a : b = a.split(" ", 2);
+    b[0] + 0 == b[0] || -1 == b[0].indexOf("e") ? a = addSeparators(a) : (a = a.split("e"),
+    a = 1 != parseFloat(a[0]) ? addSeparators(parseFloat(a[0])) + "\u00d710<sup>" + parseFloat(a[1]) + "</sup>" : "10<sup>" + parseFloat(a[1]) + "</sup>",
+    null != b[1] && (a = " " + b[1]));
+    return a
+}
+
+
+
+
+function setInnerHTML(a, b) {
+    document.getElementById && (document.getElementById(a).innerHTML = b)
+}
+
+
+function formatDate(a, b) {
+    var c = a.substring(0, 4);
+    var d = a.substring(4, 6);
+    var f = a.substring(6, 8);
+    switch (b) {
+    case 1:
+        return "0" == f.charAt(0) && (f = f.charAt(1)),
+        "0" == d.charAt(0) && (d = d.charAt(1)),
+        f + "/" + d;
+    case 2:
+        return c + "-" + d + "-" + f;
+    default:
+        return a
+    }
+}
+function converterChange(a, b) {
+    var c = $((b ? "#mini-" + a + " " : "") + "select." + (b ? "mini" : "extended") + "-from")[0].selectedIndex
+      , d = $((b ? "#mini-" + a + " " : "") + "select." + (b ? "mini" : "extended") + "-to")[0].selectedIndex;
+    $((b ? "#mini-" + a + " " : "") + "select." + (b ? "mini" : "extended") + "-from").prop("selectedIndex", d);
+    $((b ? "#mini-" + a + " " : "") + "select." + (b ? "mini" : "extended") + "-to").prop("selectedIndex", c);
+    $((b ? "#mini-" + a + " " : "") + "div." + (b ? "mini" : "extended") + "-from") && (c = $((b ? "#mini-" + a + " " : "") + "div." + (b ? "mini" : "extended") + "-from > button").html(),
+    d = $((b ? "#mini-" + a + " " : "") + "div." + (b ? "mini" : "extended") + "-to > button").html(),
+    $((b ? "#mini-" + a + " " : "") + "div." + (b ? "mini" : "extended") + "-from > button").html(d),
+    $((b ? "#mini-" + a + " " : "") + "div." + (b ? "mini" : "extended") + "-to > button").html(c))
+}
+
+function setInnerHTML(a, b) {
+    document.getElementById && (document.getElementById(a).innerHTML = b)
+}
+
+
+function text2short(a) {
+    var b = a.lastIndexOf("(");
+    if (-1 == b)
+        return a;
+    var c = a.lastIndexOf(")");
+    if (-1 == c)
+        return a;
+    a = a.substring(b + 1, c);
+    return remDupSho(a)
+}
+function remDupSho(a) {
+    var b = a.lastIndexOf(":");
+    return -1 == b ? a : a.substring(0, b)
+}
+
+
+
+
+function converterChange(a, b) {
+    var c = $((b ? "#mini-" + a + " " : "") + "select." + (b ? "mini" : "extended") + "-from")[0].selectedIndex
+      , d = $((b ? "#mini-" + a + " " : "") + "select." + (b ? "mini" : "extended") + "-to")[0].selectedIndex;
+    $((b ? "#mini-" + a + " " : "") + "select." + (b ? "mini" : "extended") + "-from").prop("selectedIndex", d);
+    $((b ? "#mini-" + a + " " : "") + "select." + (b ? "mini" : "extended") + "-to").prop("selectedIndex", c);
+    $((b ? "#mini-" + a + " " : "") + "div." + (b ? "mini" : "extended") + "-from") && (c = $((b ? "#mini-" + a + " " : "") + "div." + (b ? "mini" : "extended") + "-from > button").html(),
+    d = $((b ? "#mini-" + a + " " : "") + "div." + (b ? "mini" : "extended") + "-to > button").html(),
+    $((b ? "#mini-" + a + " " : "") + "div." + (b ? "mini" : "extended") + "-from > button").html(d),
+    $((b ? "#mini-" + a + " " : "") + "div." + (b ? "mini" : "extended") + "-to > button").html(c))
+}
+
+
+</script>
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
